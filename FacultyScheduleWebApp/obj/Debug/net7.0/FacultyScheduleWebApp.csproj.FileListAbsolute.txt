@@ -255,7 +255,6 @@ C:\Projects\web\FacultyScheduleWebApp\FacultyScheduleWebApp\obj\Debug\net7.0\sta
 C:\Projects\web\FacultyScheduleWebApp\FacultyScheduleWebApp\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Projects\web\FacultyScheduleWebApp\FacultyScheduleWebApp\obj\Debug\net7.0\scopedcss\bundle\FacultyScheduleWebApp.styles.css
 C:\Projects\web\FacultyScheduleWebApp\FacultyScheduleWebApp\obj\Debug\net7.0\scopedcss\projectbundle\FacultyScheduleWebApp.bundle.scp.css
-C:\Projects\web\FacultyScheduleWebApp\FacultyScheduleWebApp\obj\Debug\net7.0\FacultyScheduleWebApp.csproj.CopyComplete
 C:\Projects\web\FacultyScheduleWebApp\FacultyScheduleWebApp\obj\Debug\net7.0\FacultyScheduleWebApp.dll
 C:\Projects\web\FacultyScheduleWebApp\FacultyScheduleWebApp\obj\Debug\net7.0\refint\FacultyScheduleWebApp.dll
 C:\Projects\web\FacultyScheduleWebApp\FacultyScheduleWebApp\obj\Debug\net7.0\FacultyScheduleWebApp.pdb
@@ -289,3 +288,5 @@ C:\Projects\web\FacultyScheduleWebApp\FacultyScheduleWebApp\bin\Debug\net7.0\run
 C:\Projects\web\FacultyScheduleWebApp\FacultyScheduleWebApp\bin\Debug\net7.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Projects\web\FacultyScheduleWebApp\FacultyScheduleWebApp\bin\Debug\net7.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Projects\web\FacultyScheduleWebApp\FacultyScheduleWebApp\bin\Debug\net7.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Projects\web\FacultyScheduleWebApp\FacultyScheduleWebApp\obj\Debug\net7.0\FacultyScheduleWebApp.sourcelink.json
+C:\Projects\web\FacultyScheduleWebApp\FacultyScheduleWebApp\obj\Debug\net7.0\FacultyS.6F88A4A3.Up2Date

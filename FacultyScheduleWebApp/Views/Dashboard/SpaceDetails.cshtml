@@ -1,0 +1,80 @@
+﻿@model FacultyScheduleWebApp.Models.Space
+
+@{
+    Layout = "/Views/Shared/_DashboardLayout.cshtml";
+    ViewData["Title"] = "Space Detayları";
+}
+
+<h1>@Model.Name <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteSpaceModal">Veri Alanını Sil</button></h1>
+
+<div class="row mt-4">
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                Akademisyenler
+            </div>
+            <div class="card-body">
+                <p class="card-text">Bu alanda akademisyenler hakkında bilgi bulunur.</p>
+                <a href="@Url.Action("Academicians", "Dashboard", new { id = Model.Id })" class="btn btn-primary">Detaylar</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                Derslikler
+            </div>
+            <div class="card-body">
+                <p class="card-text">Bu alanda derslikler hakkında bilgi bulunur.</p>
+                <a href="@Url.Action("Classrooms", "Dashboard", new { id = Model.Id })" class="btn btn-primary">Detaylar</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                Fakülte Dersleri
+            </div>
+            <div class="card-body">
+                <p class="card-text">Bu alanda fakülte dersleri hakkında bilgi bulunur.</p>
+                <a href="@Url.Action("FacultyCourses", "Dashboard", new { id = Model.Id })" class="btn btn-primary">Detaylar</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                Oluşturulan Ders Programları
+            </div>
+            <div class="card-body">
+                <p class="card-text">Bu alanda oluşturulan ders programları hakkında bilgi bulunur.</p>
+                <a href="@Url.Action("CreatedSchedules", "Dashboard", new { id = Model.Id })" class="btn btn-primary">Detaylar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for deleting space -->
+<div class="modal fade" id="deleteSpaceModal" tabindex="-1" aria-labelledby="deleteSpaceModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="deleteSpaceForm" method="post" asp-controller="Dashboard" asp-action="DeleteSpace">
+                <input type="hidden" name="id" value="@Model.Id" />
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteSpaceModalLabel">Veri Alanını Sil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Emin misiniz? Bu işlem geri alınamaz. Lütfen "@Model.Name" yazınız.</p>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="confirmName" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                    <button type="submit" class="btn btn-danger">Sil</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,63 @@
-﻿@{
-    Layout = "/Views/Shared/_dashboardlayout.cshtml";
+﻿@model List<FacultyScheduleWebApp.Models.Space>
+
+@{
+    Layout = "/Views/Shared/_DashboardLayout.cshtml";
     ViewData["Title"] = "Dashboard";
 }
 
 <h1>Veri Bankası</h1>
 <p>Bu sayfa veri bankasıyla ilgili içerikleri gösterir.</p>
+
+<!-- Buton to open modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addSpaceModal">
+    Yeni Space Ekle
+</button>
+
+<!-- Modal for adding new space -->
+<div class="modal fade" id="addSpaceModal" tabindex="-1" aria-labelledby="addSpaceModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="addSpaceForm" method="post" asp-controller="Dashboard" asp-action="CreateSpace">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addSpaceModalLabel">Yeni Space Ekle</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="spaceName" class="form-label">Space Adı</label>
+                        <input type="text" class="form-control" id="spaceName" name="Name" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Spaces Cards -->
+<div class="row mt-4">
+    @if (Model != null)
+    {
+        @foreach (var space in Model)
+        {
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        @space.Name
+                    </div>
+                    <div class="card-body">
+                        <!-- Detaylar butonu -->
+                        <a href="@Url.Action("SpaceDetails", "Dashboard", new { id = space.Id })" class="btn btn-primary">Detaylar</a>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <h5>Oluşturulmuş bir Veri Alanı bulunmamakta, lütfen üst taraftan bir tane oluşturun</h5>
+    }
+</div>

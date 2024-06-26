@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using FacultyScheduleWebApp.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace FacultyScheduleWebApp.Data
@@ -9,5 +10,6 @@ namespace FacultyScheduleWebApp.Data
             : base(options)
         {
         }
+        public DbSet<Space> Spaces { get; set; }
     }
 }

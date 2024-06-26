@@ -4,6 +4,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <style>
@@ -17,16 +22,21 @@
             overflow: auto;
         }
 
-            .sidebar a {
-                display: block;
-                color: black;
-                padding: 10px;
-                text-decoration: none;
-            }
+        .sidebar a {
+             display: block;
+             color: black;
+             padding: 10px;
+             text-decoration: none;
+        }
 
                 .sidebar a:hover {
                     background-color: #ddd;
-                }
+       
+
+        .content{
+            margin-left: 250px;
+            padding : 2%;
+        }
     </style>
 </head>
 <body>
@@ -36,8 +46,8 @@
         <a href="~/Dashboard/CreateSchedule">Ders Programı Oluştur</a>
         <a href="~/Dashboard/Settings">Ayarlar</a>
     </div>
-    <div style="margin-left: 250px;">
-        <div>
+    <div style="" class="container">
+        <div style=" margin-left: 250px; padding-top:2%;">
             @RenderBody()
         </div>
     </div>

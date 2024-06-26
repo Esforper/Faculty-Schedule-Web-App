@@ -10,6 +10,8 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FacultyScheduleWebApp
 build_property.RootNamespace = FacultyScheduleWebApp
 build_property.ProjectDir = C:\Projects\web\FacultyScheduleWebApp\FacultyScheduleWebApp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
@@ -190,6 +192,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Projects/web/FacultyScheduleWebApp/FacultyScheduleWebApp/Views/Dashboard/Settings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFNldHRpbmdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projects/web/FacultyScheduleWebApp/FacultyScheduleWebApp/Views/Dashboard/SpaceDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFNwYWNlRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Projects/web/FacultyScheduleWebApp/FacultyScheduleWebApp/Views/Home/Index.cshtml]
