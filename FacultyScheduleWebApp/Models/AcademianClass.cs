@@ -17,7 +17,8 @@ namespace FacultyScheduleWebApp.Models
         [NotMapped]
         public int[] AvaibleDates { get; set; }
 
-        public List<AcademianViewCell> Dates { get; set; } = new List<AcademianViewCell>();
+        [NotMapped]
+        public List<AcademianViewCell> Dates { get; set; }
 
         public string LessonCodesSerialized
         {

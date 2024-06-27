@@ -1,4 +1,6 @@
-﻿namespace FacultyScheduleWebApp.Models
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace FacultyScheduleWebApp.Models
 {
     public class DateCellClass
     {
@@ -17,7 +19,7 @@
         public int CellColumn { get; set; }
     }
 
-
+    [Keyless]
     public class AcademianViewCell
     {
         public string ClassName { get; set; }
@@ -26,7 +28,7 @@
         public int CellRow { get; set; }
         public int CellColumn { get; set; }
     }
-
+    [Keyless]
     public class ClassroomViewCell
     {
         public string AcademianName { get; set; }
@@ -35,7 +37,7 @@
         public int CellRow { get; set; }
         public int CellColumn { get; set; }
     }
-
+    [Keyless]
     public class LessonViewCell
     {
         public string AcademianName { get; set; }
