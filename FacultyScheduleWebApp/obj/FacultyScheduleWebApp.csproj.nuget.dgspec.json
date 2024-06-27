@@ -79,14 +79,6 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[7.0.12, )"
-            },
-            "MongoDB.Driver": {
-              "target": "Package",
-              "version": "[2.26.0, )"
-            },
-            "MongoDB.Driver.Core": {
-              "target": "Package",
-              "version": "[2.26.0, )"
             }
           },
           "imports": [

@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FacultyScheduleWebApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+da6c19c736e90f8cea41eb45d86c5a179fe137d8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2be577eff0065ca60ec1abc33e2497df52e2ec42")]
 [assembly: System.Reflection.AssemblyProductAttribute("FacultyScheduleWebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FacultyScheduleWebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
