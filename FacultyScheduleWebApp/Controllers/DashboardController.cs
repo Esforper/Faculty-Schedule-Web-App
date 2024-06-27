@@ -4,6 +4,7 @@ using FacultyScheduleWebApp.Models;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace FacultyScheduleWebApp.Controllers
 {
@@ -75,7 +76,6 @@ namespace FacultyScheduleWebApp.Controllers
             return View(space);
         }
 
-
         public IActionResult Academicians(Guid id)
         {
             var academians = _context.Academians.Where(a => a.WorkspaceID == id).ToList();
@@ -89,18 +89,32 @@ namespace FacultyScheduleWebApp.Controllers
             return View();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> AddAcademian(AcademianClass academian)
+       
+        public async Task<IActionResult> AddAcademian(AcademianClass academian, string lessonCodesJson, string availableDatesJson)
         {
             if (ModelState.IsValid)
             {
                 academian.Id = Guid.NewGuid();
+
+                if (!string.IsNullOrEmpty(lessonCodesJson))
+                {
+                    academian.LessonCodes = JsonConvert.DeserializeObject<List<string>>(lessonCodesJson);
+                }
+
+                if (!string.IsNullOrEmpty(availableDatesJson))
+                {
+                    academian.AvaibleDates = JsonConvert.DeserializeObject<int[]>(availableDatesJson);
+                }
+
                 _context.Academians.Add(academian);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Academicians", new { id = academian.WorkspaceID });
             }
+
             ViewBag.WorkspaceId = academian.WorkspaceID;
             return View(academian);
         }
+
+
     }
 }

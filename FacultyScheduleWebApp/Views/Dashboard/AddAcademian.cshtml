@@ -8,19 +8,45 @@
 
 <h1>Yeni Akademisyen Ekle</h1>
 
-<form asp-action="AddAcademian">
+<form asp-action="AddAcademian" method="post">
+    <input type="hidden" asp-for="Id" />
     <input type="hidden" name="WorkspaceID" value="@workspaceId" />
     <div class="mb-3">
-        <label for="academianName" class="form-label">Akademisyen Adı</label>
-        <input type="text" class="form-control" id="academianName" name="AcademianName" required>
+        <label for="AcademianName" class="form-label">Akademisyen Adı</label>
+        <input type="text" class="form-control" id="AcademianName" name="AcademianName" required>
+        <span asp-validation-for="AcademianName" class="text-danger"></span>
     </div>
     <div class="mb-3">
-        <label for="academianFaculty" class="form-label">Fakülte</label>
-        <input type="text" class="form-control" id="academianFaculty" name="AcademianFaculty" required>
+        <label for="AcademianFaculty" class="form-label">Fakülte</label>
+        <input type="text" class="form-control" id="AcademianFaculty" name="AcademianFaculty" required>
+        <span asp-validation-for="AcademianFaculty" class="text-danger"></span>
     </div>
     <div class="mb-3">
-        <label for="academianLessonCount" class="form-label">Ders Sayısı</label>
-        <input type="number" class="form-control" id="academianLessonCount" name="AcademianLessonCount" required>
+        <label for="AcademianLessonCount" class="form-label">Ders Sayısı</label>
+        <input type="number" class="form-control" id="AcademianLessonCount" name="AcademianLessonCount" required>
+        <span asp-validation-for="AcademianLessonCount" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-primary">Kaydet</button>
 </form>
+<script>
+    document.querySelector("form").addEventListener("submit", function (e) {
+        var lessonCodes = ["code1", "code2"]; // Gerçek verilere göre ayarlayın
+        var availableDates = [1, 2, 3]; // Gerçek verilere göre ayarlayın
+
+        var lessonCodesJson = JSON.stringify(lessonCodes);
+        var availableDatesJson = JSON.stringify(availableDates);
+
+        var inputLessonCodes = document.createElement("input");
+        inputLessonCodes.type = "hidden";
+        inputLessonCodes.name = "lessonCodesJson";
+        inputLessonCodes.value = lessonCodesJson;
+
+        var inputAvailableDates = document.createElement("input");
+        inputAvailableDates.type = "hidden";
+        inputAvailableDates.name = "availableDatesJson";
+        inputAvailableDates.value = availableDatesJson;
+
+        this.appendChild(inputLessonCodes);
+        this.appendChild(inputAvailableDates);
+    });
+</script>
