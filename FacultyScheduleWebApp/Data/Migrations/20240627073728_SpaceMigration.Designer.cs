@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FacultyScheduleWebApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240626175207_UpdateSpaceIdToGuid")]
-    partial class UpdateSpaceIdToGuid
+    [Migration("20240627073728_SpaceMigration")]
+    partial class SpaceMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
