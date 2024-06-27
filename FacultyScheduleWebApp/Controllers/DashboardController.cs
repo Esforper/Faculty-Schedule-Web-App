@@ -74,5 +74,33 @@ namespace FacultyScheduleWebApp.Controllers
             }
             return View(space);
         }
+
+
+        public IActionResult Academicians(Guid id)
+        {
+            var academians = _context.Academians.Where(a => a.WorkspaceID == id).ToList();
+            ViewBag.WorkspaceId = id;
+            return View(academians);
+        }
+
+        public IActionResult AddAcademian(Guid workspaceId)
+        {
+            ViewBag.WorkspaceId = workspaceId;
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddAcademian(AcademianClass academian)
+        {
+            if (ModelState.IsValid)
+            {
+                academian.Id = Guid.NewGuid();
+                _context.Academians.Add(academian);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Academicians", new { id = academian.WorkspaceID });
+            }
+            ViewBag.WorkspaceId = academian.WorkspaceID;
+            return View(academian);
+        }
     }
 }

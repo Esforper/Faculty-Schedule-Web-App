@@ -1,0 +1,52 @@
+﻿@model IEnumerable<FacultyScheduleWebApp.Models.AcademianClass>
+@{
+    Layout = "/Views/Shared/_DashboardLayout.cshtml";
+    ViewData["Title"] = "Akademisyenler";
+    var workspaceId = ViewBag.WorkspaceId as Guid?;
+}
+
+<h1>Akademisyenler</h1>
+
+<div class="mb-3">
+    <a href="@Url.Action("AddAcademian", "Dashboard", new { workspaceId = workspaceId })" class="btn btn-primary">Yeni Akademisyen Ekle</a>
+</div>
+
+<div class="mb-3">
+    <input type="text" id="searchInput" class="form-control" placeholder="Akademisyen Ara...">
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">İsim</th>
+            <th scope="col">Fakülte</th>
+            <th scope="col">Ders Sayısı</th>
+            <th scope="col">Eylemler</th>
+        </tr>
+    </thead>
+    <tbody id="academianTable">
+        @foreach (var academian in Model)
+        {
+            <tr>
+                <td>@academian.AcademianName</td>
+                <td>@academian.AcademianFaculty</td>
+                <td>@academian.AcademianLessonCount</td>
+                <td>
+                    <!-- Eylemler (Düzenle/Sil) burada olacak -->
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    document.getElementById('searchInput').addEventListener('input', function() {
+        var searchValue = this.value.toLowerCase();
+        var rows = document.querySelectorAll('#academianTable tr');
+
+        rows.forEach(function(row) {
+            var nameCell = row.querySelector('td:first-child').textContent.toLowerCase();
+            row.style.display = nameCell.includes(searchValue) ? '' : 'none';
+        });
+    });
+</script>

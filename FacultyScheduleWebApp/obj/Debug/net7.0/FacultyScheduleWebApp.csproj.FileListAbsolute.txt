@@ -298,11 +298,8 @@ C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\FacultyScheduleWebApp.runtimeconfig.json
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\FacultyScheduleWebApp.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\FacultyScheduleWebApp.pdb
-C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\AWSSDK.Core.dll
-C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\AWSSDK.SecurityToken.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\Azure.Core.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\Azure.Identity.dll
-C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\DnsClient.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\Humanizer.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
@@ -356,10 +353,6 @@ C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
-C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\MongoDB.Bson.dll
-C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\MongoDB.Driver.dll
-C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\MongoDB.Driver.Core.dll
-C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\MongoDB.Libmongocrypt.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\NuGet.Common.dll
@@ -371,8 +364,6 @@ C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\NuGet.ProjectModel.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\NuGet.Protocol.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\NuGet.Versioning.dll
-C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\SharpCompress.dll
-C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\Snappier.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\SQLitePCLRaw.batteries_v2.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\SQLitePCLRaw.core.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\SQLitePCLRaw.provider.e_sqlite3.dll
@@ -391,7 +382,6 @@ C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\System.Security.Permissions.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\System.Windows.Extensions.dll
-C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\ZstdSharp.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\af\Humanizer.resources.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\ar\Humanizer.resources.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\az\Humanizer.resources.dll
@@ -538,9 +528,6 @@ C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\runtimes\linux\native\libmongocrypt.so
-C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\runtimes\osx\native\libmongocrypt.dylib
-C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\runtimes\win\native\mongocrypt.dll
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\runtimes\alpine-arm\native\libe_sqlite3.so
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\runtimes\alpine-arm64\native\libe_sqlite3.so
 C:\Projects\web\Faculty-Schedule-Web-App\FacultyScheduleWebApp\bin\Debug\net7.0\runtimes\alpine-x64\native\libe_sqlite3.so
