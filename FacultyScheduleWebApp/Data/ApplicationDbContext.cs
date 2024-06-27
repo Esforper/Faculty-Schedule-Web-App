@@ -11,5 +11,7 @@ namespace FacultyScheduleWebApp.Data
         {
         }
         public DbSet<Workspace> Spaces { get; set; }
+        public DbSet<AcademianClass> Academians { get; set; }
+        public DbSet<DateCellClass> DateCells { get; set; }
     }
 }

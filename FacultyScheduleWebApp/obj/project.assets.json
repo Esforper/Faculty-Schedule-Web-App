@@ -12519,7 +12519,6 @@
       "Microsoft.EntityFrameworkCore.Sqlite >= 7.0.18",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.18",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 7.0.12",
-      "MongoDB.Bson >= 2.26.0",
       "MongoDB.Driver >= 2.26.0",
       "MongoDB.Driver.Core >= 2.26.0"
     ]
@@ -12603,10 +12602,6 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[7.0.12, )"
-          },
-          "MongoDB.Bson": {
-            "target": "Package",
-            "version": "[2.26.0, )"
           },
           "MongoDB.Driver": {
             "target": "Package",

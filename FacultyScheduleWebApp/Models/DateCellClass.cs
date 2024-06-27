@@ -16,4 +16,32 @@
         public int CellRow { get; set; }
         public int CellColumn { get; set; }
     }
+
+
+    public class AcademianViewCell
+    {
+        public string ClassName { get; set; }
+        public string LessonCode { get; set; }
+
+        public int CellRow { get; set; }
+        public int CellColumn { get; set; }
+    }
+
+    public class ClassroomViewCell
+    {
+        public string AcademianName { get; set; }
+        public string LessonCode { get; set; }
+
+        public int CellRow { get; set; }
+        public int CellColumn { get; set; }
+    }
+
+    public class LessonViewCell
+    {
+        public string AcademianName { get; set; }
+        public string ClassName { get; set; }
+
+        public int CellRow { get; set; }
+        public int CellColumn { get; set; }
+    }
 }
