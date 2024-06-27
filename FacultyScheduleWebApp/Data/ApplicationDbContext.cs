@@ -10,6 +10,6 @@ namespace FacultyScheduleWebApp.Data
             : base(options)
         {
         }
-        public DbSet<Space> Spaces { get; set; }
+        public DbSet<Workspace> Spaces { get; set; }
     }
 }

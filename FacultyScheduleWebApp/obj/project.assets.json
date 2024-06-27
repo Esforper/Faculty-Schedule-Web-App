@@ -12531,11 +12531,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\web\\FacultyScheduleWebApp\\FacultyScheduleWebApp\\FacultyScheduleWebApp.csproj",
+      "projectUniqueName": "C:\\Projects\\web\\Faculty-Schedule-Web-App\\FacultyScheduleWebApp\\FacultyScheduleWebApp.csproj",
       "projectName": "FacultyScheduleWebApp",
-      "projectPath": "C:\\Projects\\web\\FacultyScheduleWebApp\\FacultyScheduleWebApp\\FacultyScheduleWebApp.csproj",
+      "projectPath": "C:\\Projects\\web\\Faculty-Schedule-Web-App\\FacultyScheduleWebApp\\FacultyScheduleWebApp.csproj",
       "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\web\\FacultyScheduleWebApp\\FacultyScheduleWebApp\\obj\\",
+      "outputPath": "C:\\Projects\\web\\Faculty-Schedule-Web-App\\FacultyScheduleWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

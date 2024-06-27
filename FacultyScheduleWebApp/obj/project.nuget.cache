@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BtqVwhr0mxw=",
+  "dgSpecHash": "NWJs9VZXnBQ=",
   "success": true,
-  "projectFilePath": "C:\\Projects\\web\\FacultyScheduleWebApp\\FacultyScheduleWebApp\\FacultyScheduleWebApp.csproj",
+  "projectFilePath": "C:\\Projects\\web\\Faculty-Schedule-Web-App\\FacultyScheduleWebApp\\FacultyScheduleWebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\asus\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",

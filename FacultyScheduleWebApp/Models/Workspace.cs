@@ -2,7 +2,7 @@
 
 namespace FacultyScheduleWebApp.Models
 {
-    public class Space
+    public class Workspace
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

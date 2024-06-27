@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-FacultyScheduleWebApp-0307027f-aef9-4d63-a4fa-c10528b9de51")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("FacultyScheduleWebApp")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7cbf092e1f04278b9a07e73616f9a38d661fdb05")]
 [assembly: System.Reflection.AssemblyProductAttribute("FacultyScheduleWebApp")]

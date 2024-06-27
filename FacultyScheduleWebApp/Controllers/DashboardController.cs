@@ -28,7 +28,7 @@ namespace FacultyScheduleWebApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateSpace(Space space)
+        public async Task<IActionResult> CreateSpace(Workspace space)
         {
             if (ModelState.IsValid)
             {
