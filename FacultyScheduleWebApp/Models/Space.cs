@@ -1,4 +1,6 @@
-﻿namespace FacultyScheduleWebApp.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace FacultyScheduleWebApp.Models
 {
     public class Space
     {
