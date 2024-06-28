@@ -89,30 +89,37 @@ namespace FacultyScheduleWebApp.Controllers
             return View();
         }
 
-       
+        [HttpPost]
         public async Task<IActionResult> AddAcademian(AcademianClass academian, string lessonCodesJson, string availableDatesJson)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                academian.Id = Guid.NewGuid();
-
-                if (!string.IsNullOrEmpty(lessonCodesJson))
+                // ModelState'teki hataları kontrol et
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+                foreach (var error in errors)
                 {
-                    academian.LessonCodes = JsonConvert.DeserializeObject<List<string>>(lessonCodesJson);
+                    Console.WriteLine(error.ErrorMessage);
                 }
 
-                if (!string.IsNullOrEmpty(availableDatesJson))
-                {
-                    academian.AvaibleDates = JsonConvert.DeserializeObject<int[]>(availableDatesJson);
-                }
-
-                _context.Academians.Add(academian);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("Academicians", new { id = academian.WorkspaceID });
+                ViewBag.WorkspaceId = academian.WorkspaceID;
+                return View(academian);
             }
 
-            ViewBag.WorkspaceId = academian.WorkspaceID;
-            return View(academian);
+            academian.Id = Guid.NewGuid();
+
+            if (!string.IsNullOrEmpty(lessonCodesJson))
+            {
+                academian.LessonCodes = JsonConvert.DeserializeObject<List<string>>(lessonCodesJson);
+            }
+
+            if (!string.IsNullOrEmpty(availableDatesJson))
+            {
+                academian.AvaibleDates = JsonConvert.DeserializeObject<int[]>(availableDatesJson);
+            }
+
+            _context.Academians.Add(academian);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Academicians", new { id = academian.WorkspaceID });
         }
 
 

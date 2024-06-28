@@ -10,24 +10,61 @@
 
 <form asp-action="AddAcademian" method="post">
     <input type="hidden" asp-for="Id" />
-    <input type="hidden" name="WorkspaceID" value="@workspaceId" />
+    <input type="hidden" asp-for="WorkspaceID" value="@workspaceId" />
+
     <div class="mb-3">
-        <label for="AcademianName" class="form-label">Akademisyen Adı</label>
-        <input type="text" class="form-control" id="AcademianName" name="AcademianName" required>
+        <label asp-for="AcademianName" class="form-label"></label>
+        <input asp-for="AcademianName" class="form-control" required />
         <span asp-validation-for="AcademianName" class="text-danger"></span>
     </div>
+
     <div class="mb-3">
-        <label for="AcademianFaculty" class="form-label">Fakülte</label>
-        <input type="text" class="form-control" id="AcademianFaculty" name="AcademianFaculty" required>
+        <label asp-for="AcademianFaculty" class="form-label"></label>
+        <input asp-for="AcademianFaculty" class="form-control" required />
         <span asp-validation-for="AcademianFaculty" class="text-danger"></span>
     </div>
+
     <div class="mb-3">
-        <label for="AcademianLessonCount" class="form-label">Ders Sayısı</label>
-        <input type="number" class="form-control" id="AcademianLessonCount" name="AcademianLessonCount" required>
+        <label asp-for="AcademianLessonCount" class="form-label"></label>
+        <input asp-for="AcademianLessonCount" class="form-control" required />
         <span asp-validation-for="AcademianLessonCount" class="text-danger"></span>
     </div>
+
+    <input type="hidden" name="lessonCodesJson" />
+    <input type="hidden" name="availableDatesJson" />
+
     <button type="submit" class="btn btn-primary">Kaydet</button>
 </form>
+
+<hr />
+<h3>Ders Programı</h3>
+<table id="scheduleTable" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Pazartesi</th>
+            <th>Salı</th>
+            <th>Çarşamba</th>
+            <th>Perşembe</th>
+            <th>Cuma</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var startTime = new TimeSpan(8, 30, 0);
+            for (int i = 0; i < 10; i++)
+            {
+                <tr>
+                    @for (int j = 0; j < 5; j++)
+                    {
+                        <td data-day="@j" data-hour="@startTime">@startTime</td>
+                    }
+                </tr>
+                startTime = startTime.Add(new TimeSpan(1, 0, 0));
+            }
+        }
+    </tbody>
+</table>
+
 <script>
     document.querySelector("form").addEventListener("submit", function (e) {
         var lessonCodes = ["code1", "code2"]; // Gerçek verilere göre ayarlayın
@@ -36,17 +73,67 @@
         var lessonCodesJson = JSON.stringify(lessonCodes);
         var availableDatesJson = JSON.stringify(availableDates);
 
-        var inputLessonCodes = document.createElement("input");
-        inputLessonCodes.type = "hidden";
-        inputLessonCodes.name = "lessonCodesJson";
-        inputLessonCodes.value = lessonCodesJson;
+        document.querySelector("input[name='lessonCodesJson']").value = lessonCodesJson;
+        document.querySelector("input[name='availableDatesJson']").value = availableDatesJson;
+    });
 
-        var inputAvailableDates = document.createElement("input");
-        inputAvailableDates.type = "hidden";
-        inputAvailableDates.name = "availableDatesJson";
-        inputAvailableDates.value = availableDatesJson;
+    document.addEventListener('DOMContentLoaded', (event) => {
+        let isMouseDown = false;
+        let isSelecting = false;
 
-        this.appendChild(inputLessonCodes);
-        this.appendChild(inputAvailableDates);
+        const scheduleTable = document.getElementById('scheduleTable');
+        const cells = scheduleTable.querySelectorAll('td');
+
+        cells.forEach(cell => {
+            cell.addEventListener('mousedown', (e) => {
+                isMouseDown = true;
+                isSelecting = !cell.classList.contains('selected');
+                cell.classList.toggle('selected', isSelecting);
+                e.preventDefault(); // Prevent text selection
+            });
+
+            cell.addEventListener('mouseover', (e) => {
+                if (isMouseDown) {
+                    cell.classList.toggle('selected', isSelecting);
+                }
+            });
+
+            cell.addEventListener('mouseup', () => {
+                isMouseDown = false;
+            });
+        });
+
+        document.addEventListener('mouseup', () => {
+            isMouseDown = false;
+        });
+
+        const headers = scheduleTable.querySelectorAll('th');
+        headers.forEach((header, index) => {
+            header.addEventListener('click', () => {
+                cells.forEach(cell => {
+                    if (cell.getAttribute('data-day') == index) {
+                        cell.classList.add('selected');
+                    }
+                });
+            });
+        });
     });
 </script>
+
+<style>
+    .selected {
+        background-color: #007bff;
+        color: white;
+    }
+
+    td {
+        cursor: pointer;
+        width: 100px;
+        height: 50px;
+        text-align: center;
+    }
+
+    th {
+        cursor: pointer;
+    }
+</style>
