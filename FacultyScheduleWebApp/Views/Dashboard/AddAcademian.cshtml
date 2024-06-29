@@ -1,4 +1,4 @@
-﻿@model FacultyScheduleWebApp.Models.AcademianClass
+﻿@model FacultyScheduleWebApp.Models.AddAcademianViewModel
 
 @{
     Layout = "/Views/Shared/_DashboardLayout.cshtml";
@@ -30,54 +30,43 @@
         <span asp-validation-for="AcademianLessonCount" class="text-danger"></span>
     </div>
 
-    <input type="hidden" name="lessonCodesJson" />
-    <input type="hidden" name="availableDatesJson" />
+    <div>
+        <table id="scheduleTable" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Saat</th>
+                    <th>Pazartesi</th>
+                    <th>Salı</th>
+                    <th>Çarşamba</th>
+                    <th>Perşembe</th>
+                    <th>Cuma</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    var startTime = new TimeSpan(8, 0, 0);
+                    for (int i = 0; i < 10; i++)
+                    {
+                        <tr>
+                            <td>@startTime.ToString(@"hh\:mm")</td>
+                            @for (int j = 0; j < 5; j++)
+                            {
+                                <td data-day="@j" data-hour="@startTime.ToString(@"hh\:mm")">
+                                    <input type="checkbox" name="Schedule[@i][@j]" class="d-none" />
+                                </td>
+                            }
+                        </tr>
+                        startTime = startTime.Add(new TimeSpan(1, 0, 0));
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
 
     <button type="submit" class="btn btn-primary">Kaydet</button>
 </form>
 
-<hr />
-<h3>Ders Programı</h3>
-<table id="scheduleTable" class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Pazartesi</th>
-            <th>Salı</th>
-            <th>Çarşamba</th>
-            <th>Perşembe</th>
-            <th>Cuma</th>
-        </tr>
-    </thead>
-    <tbody>
-        @{
-            var startTime = new TimeSpan(8, 0, 0);
-            for (int i = 0; i < 10; i++)
-            {
-                <tr>
-                    @for (int j = 0; j < 5; j++)
-                    {
-                        <td data-day="@j" data-hour="@startTime.ToString(@"hh\:mm")">@startTime.ToString("hh\\.mm")</td>
-                    }
-                </tr>
-                startTime = startTime.Add(new TimeSpan(1, 0, 0));
-            }
-        }
-    </tbody>
-
-</table>
-
 <script>
-    document.querySelector("form").addEventListener("submit", function (e) {
-        var lessonCodes = ["code1", "code2"]; // Gerçek verilere göre ayarlayın
-        var availableDates = [1, 2, 3]; // Gerçek verilere göre ayarlayın
-
-        var lessonCodesJson = JSON.stringify(lessonCodes);
-        var availableDatesJson = JSON.stringify(availableDates);
-
-        document.querySelector("input[name='lessonCodesJson']").value = lessonCodesJson;
-        document.querySelector("input[name='availableDatesJson']").value = availableDatesJson;
-    });
-
     document.addEventListener('DOMContentLoaded', (event) => {
         let isMouseDown = false;
         let isSelecting = false;
@@ -90,12 +79,16 @@
                 isMouseDown = true;
                 isSelecting = !cell.classList.contains('selected');
                 cell.classList.toggle('selected', isSelecting);
+                const checkbox = cell.querySelector('input[type="checkbox"]');
+                checkbox.checked = isSelecting;
                 e.preventDefault(); // Prevent text selection
             });
 
             cell.addEventListener('mouseover', (e) => {
                 if (isMouseDown) {
                     cell.classList.toggle('selected', isSelecting);
+                    const checkbox = cell.querySelector('input[type="checkbox"]');
+                    checkbox.checked = isSelecting;
                 }
             });
 
@@ -114,6 +107,8 @@
                 cells.forEach(cell => {
                     if (cell.getAttribute('data-day') == index) {
                         cell.classList.add('selected');
+                        const checkbox = cell.querySelector('input[type="checkbox"]');
+                        checkbox.checked = true;
                     }
                 });
             });
@@ -138,4 +133,3 @@
         cursor: pointer;
     }
 </style>
-

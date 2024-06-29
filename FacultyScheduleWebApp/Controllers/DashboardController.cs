@@ -90,8 +90,9 @@ namespace FacultyScheduleWebApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddAcademian(AcademianClass academian, string lessonCodesJson, string availableDatesJson)
+        public async Task<IActionResult> AddAcademian(AddAcademianViewModel model)
         {
+            /*
             if (!ModelState.IsValid)
             {
                 // ModelState'teki hataları kontrol et
@@ -101,26 +102,26 @@ namespace FacultyScheduleWebApp.Controllers
                     Console.WriteLine(error.ErrorMessage);
                 }
 
-                ViewBag.WorkspaceId = academian.WorkspaceID;
-                return View(academian);
+                ViewBag.WorkspaceId = model.WorkspaceID;
+                return View(model);
             }
-
-            academian.Id = Guid.NewGuid();
-
-            if (!string.IsNullOrEmpty(lessonCodesJson))
+            */
+            var academian = new AcademianClass
             {
-                academian.LessonCodes = JsonConvert.DeserializeObject<List<string>>(lessonCodesJson);
-            }
-
-            if (!string.IsNullOrEmpty(availableDatesJson))
-            {
-                academian.AvaibleDates = JsonConvert.DeserializeObject<int[]>(availableDatesJson);
-            }
+                Id = Guid.NewGuid(),
+                WorkspaceID = model.WorkspaceID,
+                AcademianName = model.AcademianName,
+                AcademianFaculty = model.AcademianFaculty,
+                AcademianLessonCount = model.AcademianLessonCount,
+                LessonCodes = model.LessonCodes,
+                AvaibleDatesSerialized = JsonConvert.SerializeObject(model.Schedule)
+            };
 
             _context.Academians.Add(academian);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Academicians", new { id = academian.WorkspaceID });
+            return RedirectToAction("Academicians", new { id = model.WorkspaceID });
         }
+
 
 
     }

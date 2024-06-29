@@ -22,7 +22,7 @@ namespace FacultyScheduleWebApp.Models
         public List<string> LessonCodes { get; set; } = new List<string>();
 
         [NotMapped]
-        public int[] AvaibleDates { get; set; }
+        public bool[] AvaibleDates { get; set; }
 
         [NotMapped]
         public List<AcademianViewCell> Dates { get; set; }
@@ -36,7 +36,27 @@ namespace FacultyScheduleWebApp.Models
         public string AvaibleDatesSerialized
         {
             get => JsonConvert.SerializeObject(AvaibleDates);
-            set => AvaibleDates = JsonConvert.DeserializeObject<int[]>(value);
+            set => AvaibleDates = JsonConvert.DeserializeObject<bool[]>(value);
         }
     }
+
+    public class AddAcademianViewModel
+    {
+        public Guid Id { get; set; }
+        public Guid WorkspaceID { get; set; }
+
+        [Required(ErrorMessage = "Akademisyen Adı gereklidir.")]
+        public string AcademianName { get; set; }
+
+        [Required(ErrorMessage = "Fakülte gereklidir.")]
+        public string AcademianFaculty { get; set; }
+
+        [Required(ErrorMessage = "Ders Sayısı gereklidir.")]
+        public int AcademianLessonCount { get; set; }
+
+        public List<string> LessonCodes { get; set; } = new List<string>();
+
+        public bool[][] Schedule { get; set; }
+    }
+
 }
